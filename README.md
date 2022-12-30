@@ -7,14 +7,14 @@
 <!-- ABOUT THE PROJECT -->
 ## Acerca del proyecto
 
-Prueba tecnica para backend developer enfocado en Java y Spring boot
+Prueba técnica para backend developer enfocado en Java y Spring boot
 
 Requisitos:
 * Java
 * Spring Boot
 * En 24 horas
 
-El proyecto se compone de dos ramas (main y list), en la rama list el proyecto no usa base de datos, se usa una lista estatica para consumir y moficar el api, en la rama main se usa mysql como base de datos y jpa.
+El proyecto se compone de dos ramas (main y list), en la rama list el proyecto no usa base de datos, se usa una lista estática para consumir y modificar el api, en la rama main se usa mysql como base de datos y jpa.
 
 Leer `HELP.md` para conocer mas acerca de Spring Boot.
 
