@@ -30,7 +30,7 @@ El proyecto fue construido con Java, Spring Boot, MySql
 
 Luigi Arrieta - [@luigiarrieta](https://www.linkedin.com/in/luigi-arrieta/)
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Blog: [https://blog.luigiarrieta.com](https://blog.luigiarrieta.com)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [product-screenshot]: images/screenshot.png
