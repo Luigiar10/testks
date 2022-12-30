@@ -4,11 +4,8 @@ import com.kometsalestest.flowerinventory.dto.FlowerFullResponseDTO;
 import com.kometsalestest.flowerinventory.dto.FlowerRequestDTO;
 import com.kometsalestest.flowerinventory.dto.FlowerSmallResponseDTO;
 import com.kometsalestest.flowerinventory.service.impl.ServiceFlowerImpl;
-import jakarta.websocket.server.PathParam;
-import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -60,7 +57,7 @@ public class FlowerController {
     public ResponseEntity<Map<String, String>> deleteFlower(@PathVariable Long id) {
         log.info("Call delete mapping /flowers/{}", id);
         log.info("---------------------------------");
-        return new ResponseEntity<>(serviceFlower.deleteFlowerById(id), HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(serviceFlower.deleteFlowerById(id), HttpStatus.OK);
     }
 
 }
