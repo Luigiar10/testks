@@ -1,8 +1,7 @@
 package com.kometsalestest.flowerinventory.controller;
 
-import com.kometsalestest.flowerinventory.dto.FlowerFullResponseDTO;
-import com.kometsalestest.flowerinventory.dto.FlowerRequestDTO;
 import com.kometsalestest.flowerinventory.dto.FlowerSmallResponseDTO;
+import com.kometsalestest.flowerinventory.entity.Flower;
 import com.kometsalestest.flowerinventory.service.impl.ServiceFlowerImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +20,13 @@ public class FlowerController {
     @Autowired
     private ServiceFlowerImpl serviceFlower;
 
+    @PostMapping
+    public ResponseEntity<List<Flower>> saveListFlowers(@RequestBody List<Flower> requestDTOS) {
+        log.info("Call post mapping /flowers");
+        log.info("---------------------------------");
+        return new ResponseEntity<>(serviceFlower.saveFlowers(requestDTOS), HttpStatus.CREATED);
+    }
+
     @GetMapping
     public ResponseEntity<List<FlowerSmallResponseDTO>> getAllFlowers() {
         log.info("Call get mapping /flowers");
@@ -28,28 +34,10 @@ public class FlowerController {
         return new ResponseEntity<>(serviceFlower.AllFlowers(), HttpStatus.OK);
     }
 
-    @PostMapping
-    public ResponseEntity<List<FlowerFullResponseDTO>> saveListFlowers(@RequestBody List<FlowerRequestDTO> requestDTOS) {
-        log.info("Call post mapping /flowers");
-        log.info("---------------------------------");
-        return new ResponseEntity<>(serviceFlower.saveFlowers(requestDTOS), HttpStatus.CREATED);
-    }
-
-    @GetMapping(
-            params = "name"
-    )
-    public ResponseEntity<List<FlowerFullResponseDTO>> flowersByName(@RequestParam String name) {
-        log.info("Call get mapping /flowers?name={}", name);
-        log.info("---------------------------------");
-        return new ResponseEntity<>(serviceFlower.findByName(name), HttpStatus.OK);
-    }
-
     @GetMapping(
             params = "price"
     )
-    public ResponseEntity<List<FlowerFullResponseDTO>> filterPrice(@RequestParam Double price) {
-        log.info("Call get mapping /flowers?price={}", price);
-        log.info("---------------------------------");
+    public ResponseEntity<List<Flower>> priceFilter(@RequestParam Double price) {
         return new ResponseEntity<>(serviceFlower.priceFilter(price), HttpStatus.OK);
     }
 
@@ -58,6 +46,13 @@ public class FlowerController {
         log.info("Call delete mapping /flowers/{}", id);
         log.info("---------------------------------");
         return new ResponseEntity<>(serviceFlower.deleteFlowerById(id), HttpStatus.OK);
+    }
+
+    @GetMapping(
+            params = "name"
+    )
+    public ResponseEntity<List<Flower>> nameFilter(@RequestParam String name) {
+        return new ResponseEntity<>(serviceFlower.nameFilter(name), HttpStatus.OK);
     }
 
 }
