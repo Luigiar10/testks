@@ -87,3 +87,6 @@ Blog: [https://blog.luigiarrieta.com](https://blog.luigiarrieta.com)
 [Java-url]: https://www.java.com/es/
 [Spring]: https://img.shields.io/badge/SpringBoot-20232A
 [Spring-url]: https://spring.io/
+
+#### Nota:
+No quede del todo seguro si el requisito en la parte de la lista si fue desarrollado acorde a lo que se esperaba (me imagino que solicitaban una lista para no ser necesario ninguna BD), se crearon dos ramas por esa razón. Se podría mejorar con paginación a los resultados, autenticación y autorización.
